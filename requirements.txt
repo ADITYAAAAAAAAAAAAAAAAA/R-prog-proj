@@ -6,3 +6,4 @@ cohere
 transformers
 sentencepiece
 protobuf
+rpy2
