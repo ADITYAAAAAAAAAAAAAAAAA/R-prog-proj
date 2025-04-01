@@ -1,0 +1,8 @@
+streamlit
+torch
+torchvision
+Pillow
+cohere
+transformers
+sentencepiece
+protobuf
