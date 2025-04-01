@@ -21,7 +21,20 @@ query_cohere <- function(caption, user_question) {
       max_tokens = 100,
       temperature = 0.75
     ), auto_unbox = TRUE)
-  )
+  
+st.title("VisioNiX - Image Captioning and Q&A")
+uploaded_image = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
+if uploaded_image:
+    image = Image.open(uploaded_image)
+    #st.image(image, caption="Uploaded Image", use_column_width=True)
+    st.image(image, caption="Uploaded Image", use_container_width=True)
+    user_question = st.text_input("Ask a question about the image")
+    
+    if st.button("Get Answer") and user_question:
+        caption = generate_caption(image)
+        answer = query_cohere(caption, user_question)
+        
+        st.write("### Answer:", answer)
   
   content <- content(response, as = "text", encoding = "UTF-8")
   parsed_content <- fromJSON(content)
