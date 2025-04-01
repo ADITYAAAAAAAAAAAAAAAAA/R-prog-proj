@@ -1,6 +1,7 @@
 library(magick)
 library(httr)
 library(jsonlite)
+library(rpy2)
 
 cohere_api_key <- "7HpPc5ghLeUjTWUHljnX8Y7xgxRcRhdOUg2bv9Px"
 
